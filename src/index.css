@@ -1,0 +1,472 @@
+/*  https://piccalil.li/blog/a-modern-css-reset */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  font-size: 62.5%;
+  --sidebar-width: 240px;
+  --color-primary: #2d6dce;
+  --color-secondary: #0d3b80;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit; /* reset all font-sizes, bolds ..ect to normal */
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+/* Input */
+
+input,
+input:focus,
+textarea,
+textarea:focus {
+  border: none;
+  outline: none;
+}
+
+/* Textarea */
+
+textarea {
+  resize: none;
+}
+
+/* Button */
+button {
+  border: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+Body {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  background-color: #f7f7f7;
+}
+
+.container {
+  min-width: 32rem;
+  max-width: 87rem;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.navButton {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  background: transparent;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: calc(0px - var(--sidebar-width));
+  color: white;
+  background: var(--color-primary);
+  transition: 0.3s all;
+}
+@media (max-width: 990px) {
+  .sidebar[data-state="closed"] {
+    display: none;
+  }
+
+  .sidebar[data-state="opened"] {
+    display: flex;
+  }
+}
+
+.isVisible {
+  left: 0;
+}
+
+.logo {
+  margin-inline: auto;
+}
+
+.nav {
+  width: 100%;
+  padding: 0 2.6rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav__link {
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  gap: 1.2rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s all;
+}
+
+.nav__link:hover {
+  background-color: var(--color-secondary);
+  box-shadow: 0 14px 28px rgb(0 0 0 / 20%);
+}
+
+.home__container {
+  gap: 3.2rem;
+}
+
+.home__content-img {
+  width: 28rem;
+  margin-inline: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home__description {
+  max-width: 56rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.greeting {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.home__title {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.smallBio {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.smallBio span {
+  color: var(--color-primary);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.btn {
+  padding: 1.2rem 3rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 100vw;
+  letter-spacing: 2px;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-secondary);
+}
+
+.home__description .social__list {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.home__description .social__icon {
+  padding: 6px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: white;
+  transition: 0.3s all;
+}
+
+.home__description .social__icon:hover,
+.home__description .social__icon:focus-within {
+  box-shadow: 0 7px 15px rgb(0 0 0 / 20%);
+}
+
+.about__container {
+  margin-top: 10rem;
+  gap: 5rem;
+}
+
+.about__content-wrapper {
+  text-align: left;
+  gap: 3.2rem;
+}
+
+.section__title {
+  margin-bottom: 4rem;
+  font-size: 2.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.skills__list {
+  max-width: 51rem;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills__list li {
+  width: 12rem;
+  padding: 1.5rem 2rem;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgb(134 151 168 / 10%);
+}
+
+.skills__list li img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.skills__list li p {
+  font-size: 14px;
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projects__item {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.projects__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projects__item-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.projects__item-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.projects__item-link {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: 0.3s all;
+}
+
+.projects__item-link:hover {
+  color: var(--color-secondary);
+}
+
+.contact__container {
+  max-width: 60rem;
+  text-align: left;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.input {
+  padding: 1rem 1.5rem;
+  background-color: white;
+  border: 0;
+  border-radius: 6px;
+  color: var(--color-primary);
+}
+
+.contact__btn {
+  margin-top: 2.2rem;
+}
+
+@media (min-width: 768px) {
+  .projects__item {
+    flex-direction: row;
+  }
+
+  .projects__item > * {
+    flex: 0 0 50%;
+  }
+
+  .projects__item-info {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 991px) {
+  .navButton {
+    display: none;
+  }
+
+  .sidebar {
+    width: 10.2rem;
+    left: 0;
+  }
+
+  .sidebar:hover {
+    width: 23rem;
+  }
+
+  .nav {
+    padding: 0 2rem;
+  }
+
+  .nav__link {
+    position: relative;
+  }
+
+  .nav__link-text {
+    display: none;
+    position: absolute;
+  }
+  .sidebar:hover .nav__link-text {
+    display: inline-block;
+    left: 60px;
+  }
+
+  .main {
+    margin-left: 102px;
+  }
+
+  .home__container {
+    padding: 0 3rem;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .home__content-img {
+    width: 35rem;
+    height: 35rem;
+    margin-inline: auto 0;
+  }
+  .greeting {
+    font-size: 2rem;
+  }
+
+  .home__description h1 {
+    font-size: 4.5rem;
+  }
+
+  .smallBio {
+    font-size: 2rem;
+  }
+
+  .home__description {
+    flex: 0 0 50%;
+    margin-inline: 0;
+  }
+
+  .home__description .social {
+    justify-content: flex-start;
+  }
+
+  .about__container {
+    margin-top: 0;
+  }
+
+  .section__title {
+    font-size: 3.2rem;
+  }
+}
