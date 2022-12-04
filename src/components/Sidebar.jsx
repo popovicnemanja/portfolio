@@ -16,25 +16,45 @@ const Sidebar = ({ toggled, handleClick }) => {
       <nav className="nav">
         <ul className="nav__list" id="navigation">
           <li className="nav__item">
-            <Link to="/" className="nav__link" onClick={handleClick}>
+            <Link
+              to="/"
+              className="nav__link"
+              onClick={handleClick}
+              aria-Label="Home"
+            >
               <RiHome4Line size={30} />{" "}
               <span className="nav__link-text">Home</span>
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/about" className="nav__link" onClick={handleClick}>
+            <Link
+              to="/about"
+              className="nav__link"
+              onClick={handleClick}
+              aria-Label="About"
+            >
               <RiUser3Line size={30} />{" "}
               <span className="nav__link-text">About</span>
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/projects" className="nav__link" onClick={handleClick}>
+            <Link
+              to="/projects"
+              className="nav__link"
+              onClick={handleClick}
+              aria-Label="Projects"
+            >
               <MdWorkOutline size={30} />{" "}
               <span className="nav__link-text">Projects</span>
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/contact" className="nav__link" onClick={handleClick}>
+            <Link
+              to="/contact"
+              className="nav__link"
+              onClick={handleClick}
+              aria-Label="Contact"
+            >
               <RiPhoneLine size={30} />{" "}
               <span className="nav__link-text">Contact</span>
             </Link>
