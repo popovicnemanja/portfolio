@@ -117,10 +117,56 @@ Body {
 }
 
 .navButton {
+  width: 4rem;
+  height: 4rem;
   position: fixed;
   top: 2.5rem;
   right: 2.5rem;
   background: transparent;
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navButton .line {
+  width: 80%;
+  height: 8%;
+  x: 10;
+  rx: 3;
+  fill: var(--color-secondary);
+  transition: y 200ms ease-in 200ms, rotate 200ms ease-in, opacity 0ms 200ms;
+  transform-origin: center;
+}
+
+.navButton.isOpen .line {
+  transition: y 200ms ease-in, rotate 200ms ease-in 200ms, opacity 0ms 200ms;
+}
+
+.navButton .top {
+  y: 22;
+}
+.navButton .middle {
+  y: 47;
+}
+
+.navButton .bottom {
+  y: 72;
+}
+
+.navButton.isOpen :is(.top, .bottom) {
+  y: 47;
+}
+
+.navButton.isOpen .top {
+  rotate: 45deg;
+}
+
+.navButton.isOpen .middle {
+  opacity: 0;
+}
+
+.navButton.isOpen .bottom {
+  rotate: -45deg;
 }
 
 .sidebar {
@@ -135,15 +181,15 @@ Body {
   left: calc(0px - var(--sidebar-width));
   color: white;
   background: var(--color-primary);
-  transition: 0.3s all;
+  transition: 0.5s all;
 }
 @media (max-width: 990px) {
-  .sidebar[data-state="closed"] {
+  .sidebar[data-state="closed"] .nav__item {
     display: none;
   }
 
-  .sidebar[data-state="opened"] {
-    display: flex;
+  .sidebar[data-state="opened"] .nav__item {
+    display: block;
   }
 }
 
@@ -191,11 +237,15 @@ Body {
   gap: 3.2rem;
 }
 
-.home__content-img {
-  width: 28rem;
+.home__img-wrapper {
   margin-inline: auto;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.home__img-wrapper img {
+  width: 28rem;
+  height: 28rem;
 }
 
 .home__description {
@@ -436,11 +486,15 @@ Body {
     text-align: left;
   }
 
-  .home__content-img {
-    width: 35rem;
-    height: 35rem;
+  .home__img-wrapper {
     margin-inline: auto 0;
   }
+
+  .home__img-wrapper img {
+    width: 35rem;
+    height: 35rem;
+  }
+
   .greeting {
     font-size: 2rem;
   }

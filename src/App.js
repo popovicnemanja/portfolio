@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Divide as Hamburger } from "hamburger-react";
+// import { Divide as Hamburger } from "hamburger-react";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,8 +15,19 @@ function App() {
   return (
     <Router>
       <div className="layout">
-        <button className="navButton" onClick={handleClick} aria-label="Menu">
-          <Hamburger toggled={isOpen} color={"#0d3b80"} />
+        <button
+          className={`navButton ${isOpen ? "isOpen" : ""}`}
+          onClick={handleClick}
+          aria-label="Menu"
+          aria-controls="navigation"
+          aria-expanded={isOpen}
+        >
+          {/* <Hamburger toggled={isOpen} color={"#0d3b80"} /> */}
+          <svg className="navButton-icon" viewBox="0 0 100 100">
+            <rect class="line top"></rect>
+            <rect class="line middle"></rect>
+            <rect class="line bottom"></rect>
+          </svg>
         </button>
         <Sidebar toggled={isOpen} handleClick={handleClick} />
         <main className="main">

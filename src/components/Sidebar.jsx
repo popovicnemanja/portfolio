@@ -14,7 +14,7 @@ const Sidebar = ({ toggled, handleClick }) => {
         <img src={Logo} alt="Logo" style={{ width: "36px" }} />
       </div>
       <nav className="nav">
-        <ul className="nav__list">
+        <ul className="nav__list" id="navigation">
           <li className="nav__item">
             <Link to="/" className="nav__link" onClick={handleClick}>
               <RiHome4Line size={30} />{" "}

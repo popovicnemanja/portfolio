@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section className="home">
       <div className="container home__container">
-        <div className="home__content-img">
+        <div className="home__img-wrapper">
           <img src={Profile} alt="Profile" />
         </div>
         <div className="home__description">
@@ -31,6 +31,7 @@ const Home = () => {
                   href="https://www.linkedin.com/in/popovicn/"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Linkedin"
                 >
                   <RiLinkedinBoxFill size={30} fill="#2d6dce" />
                 </a>
@@ -40,6 +41,7 @@ const Home = () => {
                   href="https://github.com/popovicnemanja"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Github"
                 >
                   <RiGithubFill fill="#2d6dce" size={30} />
                 </a>
@@ -49,6 +51,7 @@ const Home = () => {
                   href="mailto:nemanjaapopovic@gmail.com"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Email"
                 >
                   <RiMailLine fill="#2d6dce" size={30} />
                 </a>
