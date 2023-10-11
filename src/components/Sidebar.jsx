@@ -29,7 +29,7 @@ const Sidebar = ({ toggled, handleClick }) => {
           </li>
           <li className="nav__item">
             <Link to="/projects" className="nav__link" onClick={handleClick}>
-              <MdWorkOutline size={30} />{" "}
+              <MdWorkOutline size={30} />
               <span className="nav__link-text">Projects</span>
             </Link>
           </li>
