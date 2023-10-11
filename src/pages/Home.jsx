@@ -65,7 +65,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// TODO
-
-// Check containers inside both pages and padding of home__content wrapper and about__content-wrapper
