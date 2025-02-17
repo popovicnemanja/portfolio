@@ -42,7 +42,7 @@ const Sidebar = ({ toggled, handleClick }) => {
         </ul>
       </nav>
       <footer className="copyrights">
-        <p>&copy; 2022 - 2025</p>
+        <p>&copy; 2025</p>
       </footer>
     </aside>
   );
