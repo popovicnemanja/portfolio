@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "nemanjapopovic"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
