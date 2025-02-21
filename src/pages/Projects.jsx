@@ -10,6 +10,34 @@ const Projects = () => {
           <ul className="projects__list">
             <li className="projects__item">
               <div className="projects__item-img">
+                <img src={Ortoperla} alt="" />
+              </div>
+              <div className="projects__item-info">
+                <p className="projects__item-title">Ortoperla</p>
+                <p className="projects__item-description">Ortopedic Aids</p>
+                <div className="projects__item-links">
+                  <a
+                    href="https://www.ortoperla.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="projects__item-link"
+                  >
+                    Live
+                  </a>
+                  <a
+                    href="https://github.com/popovicnemanja/github-finder"
+                    className="projects__item-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Repo
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li className="projects__item">
+              <div className="projects__item-img">
                 <img src={GithubFinder} alt="" />
               </div>
               <div className="projects__item-info">
@@ -37,6 +65,7 @@ const Projects = () => {
                 </div>
               </div>
             </li>
+
             <li className="projects__item">
               <div className="projects__item-img">
                 <img src={FeedbackApp} alt="" />
