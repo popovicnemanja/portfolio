@@ -1,5 +1,6 @@
 import GithubFinder from "../assets/GithubFinder.png";
 import FeedbackApp from "../assets/FeedbackApp.png";
+import Ortoperla from "../assets/Ortoperla.png";
 
 const Projects = () => {
   return (
@@ -25,7 +26,7 @@ const Projects = () => {
                     Live
                   </a>
                   <a
-                    href="https://github.com/popovicnemanja/github-finder"
+                    href="https://github.com/popovicnemanja/perla"
                     className="projects__item-link"
                     target="_blank"
                     rel="noreferrer"
