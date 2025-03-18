@@ -18,7 +18,7 @@ const Home = () => {
           </p>
           <div className="social">
             <a
-              href="https://docs.google.com/document/d/1yFrCf5GTGSHk6HylgzTqlED0Vis6_vgcu7_8RUufN2M/edit?usp=drive_link"
+              href="https://docs.google.com/document/d/12hPVx5K1CMk5YLwwfhok5hZZuU7LXw43HvYtYjuAV58/edit?usp=sharing"
               className="btn"
               target="_blank"
               rel="noreferrer"
